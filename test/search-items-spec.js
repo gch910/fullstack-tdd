@@ -6,6 +6,8 @@ describe("The searchItems function", () => {
     // Declare the items and term variables, here.
     // Items should be an empty array.
     // Term should be a non-empty term.
+    const items = [];
+    const term = "I";
 
     // ACT
     const result = searchItems(items, term);
@@ -17,9 +19,9 @@ describe("The searchItems function", () => {
   it('Returns all of the items when an empty search term is given', () => {
     // ARRANGE
     const items = [
-      {title: 'It is 1', category: 'Category 1'},
-      {title: 'THIS IS 2', category: 'Category 2'},
-      {title: 'I am 1', category: 'Category 3'},
+      { title: 'It is 1', category: 'Category 1' },
+      { title: 'THIS IS 2', category: 'Category 2' },
+      { title: 'I am 1', category: 'Category 3' },
     ];
     const term = "";
 
@@ -28,19 +30,20 @@ describe("The searchItems function", () => {
 
     // ASSERT
     // Fix this assertion to be correct
-    expect.fail('make this assert the proper length of the result.');
+    expect(result).to.have.length(3);
+
   });
 
   it('Returns items whose title contains the term, case insensitive', () => {
     // ARRANGE
     const items = [
-      {title: 'It is 1', category: 'Category 1'},
-      {title: 'THIS IS 2', category: 'Category 2'},
-      {title: 'I am 1', category: 'Category 3'},
+      { title: 'It is 1', category: 'Category 1' },
+      { title: 'THIS IS 2', category: 'Category 2' },
+      { title: 'I am 1', category: 'Category 3' },
     ];
     // Set term to a string that will return only two
     // of the items from the above collection.
-    const term = null;
+    const term = "1";
 
     // ACT
     const result = searchItems(items, term);
